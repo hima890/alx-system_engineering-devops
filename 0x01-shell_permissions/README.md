@@ -35,3 +35,13 @@ First here is the steps to prepir the files:
 12. a script that creates a directory called my_dir with permissions 751 in the working directory.
 
 13. a script that changes the group owner to school for the file hello
+
+**Advanced :-**
+1. a script that changes the owner to vincent and the group owner to staff for all the files and directories in the working directory.
+
+2. a script that changes the owner and the group owner of _hello to vincent and staff respectively.
+
+3.  a script that changes the owner of the file hello to betty only if it is owned by the user guillaume.
+
+4.  a script that will play the StarWars IV episode in the terminal.
+
