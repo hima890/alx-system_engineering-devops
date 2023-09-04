@@ -31,7 +31,7 @@ if not check_file:
     with open("{}".format(file_to_be_created), "w") as my_file:
         my_file.write("""#!/bin/bash
 
-        """)
+    """)
 #######################
 
 
