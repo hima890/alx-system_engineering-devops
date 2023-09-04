@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -mindepth 1 -type d -print | grep -v '^\.\(/.*\)\?$' | wc -l
+tree -d -a -L 1 | tail -n +2 | wc -l
