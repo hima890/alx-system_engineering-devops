@@ -1,0 +1,19 @@
+github acsses token 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
+
+
+git clone https://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@github.com/hima890/alx-zero_day.git
+
+git clone https://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@github.com/hima890/alx-system_engineering-devops.git
+
+git config --global user.email "hfibrahim90@gmail.com"
+
+git config --global user.name "hima890"
+
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+    
