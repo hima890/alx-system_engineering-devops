@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(env) | tr ' ' '\n'
+declare
