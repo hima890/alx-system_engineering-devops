@@ -34,7 +34,7 @@ The course is divided into several modules, each covering specific aspects of Ba
 To get started with the course, clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/bash-scripting-course.git
+git clone https://github.com/hima890/alx-system_engineering-devops.git
 cd bash-scripting-course
 ```
 
