@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Counter variable
+count=0
+
+# Loop while count is less than 10
+while [ $count -lt 10 ]; do
+    # If count is 8, display "Hi" after "Best School"
+    if [ $count -eq 8 ]; then
+        echo "Best School"
+        echo "Hi"
+    else
+        echo "Best School"
+    fi
+    ((count++))  # Increment the count
+done

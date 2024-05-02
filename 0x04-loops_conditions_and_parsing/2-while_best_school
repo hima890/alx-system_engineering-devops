@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Counter variable
+count=0
+
+# Loop while count is less than 10
+while [ $count -lt 10 ]; do
+    echo "Best School"
+    ((count++))  # Increment the count
+done
