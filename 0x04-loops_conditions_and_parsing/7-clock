@@ -1,19 +1,14 @@
 #!/usr/bin/env bash
 # Counter variables for hours and minutes
-hour=0
-minute=1
-
-# Loop until hours reach 12
-while [ $hour -le 12 ]; do
-    # Display the current time
-    echo "$hour:$minute"
-
-    # Increment minutes
-    ((minute++))
-
-    # Check if minutes reach 60
-    if [ $minute -eq 60 ]; then
-        ((hour++))    # Increment hours
-        minute=0      # Reset minutes to 0
-    fi
-done | head -n 70  # Display only the first 70 lines
+HOURS=0
+while [ $HOURS -lt 13 ]
+do
+    echo "Hour: $HOURS"
+    MINUTES=1
+    while [ $MINUTES -lt 60 ]
+    do
+        echo $MINUTES
+	let MINUTES+=1
+    done
+    let HOURS+=1
+done
