@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Counter variable
 count=1
 

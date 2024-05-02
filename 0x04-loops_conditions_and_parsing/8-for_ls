@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Loop through files in the current directory
 for file in *; do
     # Check if the file is a regular file (not a directory) and not hidden

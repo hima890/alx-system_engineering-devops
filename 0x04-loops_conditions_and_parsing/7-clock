@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Counter variables for hours and minutes
 hour=0
 minute=1
