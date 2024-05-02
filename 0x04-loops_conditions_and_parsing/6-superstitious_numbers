@@ -1,1 +1,26 @@
 #!/usr/bin/env bash
+
+# Counter variable
+count=1
+
+# Loop while count is less than or equal to 20
+while [ $count -le 20 ]; do
+    case $count in
+        4)
+            echo "$count"
+            echo "bad luck from China"
+            ;;
+        9)
+            echo "$count"
+            echo "bad luck from Japan"
+            ;;
+        17)
+            echo "$count"
+            echo "bad luck from Italy"
+            ;;
+        *)
+            echo "$count"
+            ;;
+    esac
+    ((count++))  # Increment the count
+done

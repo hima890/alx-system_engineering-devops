@@ -1,1 +1,17 @@
 #!/usr/bin/env bash
+
+# Counter variable
+count=1
+
+# Loop while count is less than or equal to 10
+while [ $count -le 10 ]; do
+    # Check if count is 4, 8, or any other value
+    if [ $count -eq 4 ]; then
+        echo "bad luck"
+    elif [ $count -eq 8 ]; then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    ((count++))  # Increment the count
+done
