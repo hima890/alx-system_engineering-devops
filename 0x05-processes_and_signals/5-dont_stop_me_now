@@ -1,1 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
+# Find the PIDs of the 4-to_infinity_and_beyond process
+target_pids=$(pgrep -f "4-to_infinity_and_beyond")
+
+# Check if any PIDs are found
+if [ -n "$target_pids" ]; then
+    # Loop through each PID and terminate the process
+    for pid in $target_pids; do
+        kill "$pid"
+    done
+else
+    echo "Processes not found or already terminated."
+fi
