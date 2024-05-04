@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Find the PIDs of the 4-to_infinity_and_beyond process
 target_pids=$(pgrep -f "4-to_infinity_and_beyond")
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Display lines containing the word "bash" to get the PID of the Bash process
 # shellcheck disable=SC2009
 ps aux | awk '/[b]ash/'
