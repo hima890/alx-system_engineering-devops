@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+# Echo the the current process ID (PID) using the special variable $$
+echo $$
