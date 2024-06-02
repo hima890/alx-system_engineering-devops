@@ -13,7 +13,7 @@ This repository contains various web infrastructure designs for hosting the webs
 
 ## Simple Web Stack
 
-**File:** [0-simple_web_stack](./0x09-web_infrastructure_design/0-simple_web_stack.md)
+**File:** [0-simple_web_stack](./0-simple_web_stack.md)
 
 This design features a single server setup, commonly known as a LAMP stack, and is ideal for small-scale applications.
 
@@ -37,7 +37,7 @@ This design features a single server setup, commonly known as a LAMP stack, and 
 
 ## Distributed Web Infrastructure
 
-**File:** [1-distributed_web_infrastructure](./0x09-web_infrastructure_design/1-distributed_web_infrastructure)
+**File:** [1-distributed_web_infrastructure](./1-distributed_web_infrastructure)
 
 This design introduces a three-server setup to distribute the load and increase availability.
 
@@ -61,7 +61,7 @@ This design introduces a three-server setup to distribute the load and increase 
 
 ## Secured and Monitored Web Infrastructure
 
-**File:** [2-secured_and_monitored_web_infrastructure](./0x09-web_infrastructure_design/2-secured_and_monitored_web_infrastructure)
+**File:** [2-secured_and_monitored_web_infrastructure](./2-secured_and_monitored_web_infrastructure)
 
 This design builds upon the distributed infrastructure, adding security and monitoring features.
 
@@ -86,7 +86,7 @@ This design builds upon the distributed infrastructure, adding security and moni
 
 ## Scale Up: Application Server vs. Web Server
 
-**File:** [3-scale_up](./0x09-web_infrastructure_design/3-scale_up)
+**File:** [3-scale_up](./3-scale_up)
 
 This design focuses on scaling up the infrastructure by splitting the components into dedicated servers and configuring a load balancer cluster.
 
