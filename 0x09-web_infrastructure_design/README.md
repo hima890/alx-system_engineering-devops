@@ -13,7 +13,7 @@ This repository contains various web infrastructure designs for hosting the webs
 
 ## Simple Web Stack
 
-**File:** [0-simple_web_stack](./0x09-web_infrastructure_design/0-simple_web_stack)
+**File:** [0-simple_web_stack](./0x09-web_infrastructure_design/0-simple_web_stack.md)
 
 This design features a single server setup, commonly known as a LAMP stack, and is ideal for small-scale applications.
 
