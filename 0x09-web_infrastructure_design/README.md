@@ -110,7 +110,3 @@ This design focuses on scaling up the infrastructure by splitting the components
 ### How to Use
 
 Each file in the directory contains a detailed explanation of the specific infrastructure design, including the components used, their roles, and potential issues. Navigate to the respective files for a comprehensive understanding of each setup.
-
----
-
-For more details on each design, refer to the specific task files linked above.
