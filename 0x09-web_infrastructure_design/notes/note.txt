@@ -1,6 +1,6 @@
 General Team Notes:
 For the Web infrastructure design we go with [https://app.eraser.io] it is free software that helps teams to design and communicate using flow chart, icons, and more.
-    |____ The invite link for the folder [https://app.eraser.io/invite/EXULLqWsflS5J2LYoRGS]
+    |____ The invite link for the folder [Expire]
     |____ In the this notes folder you will find a screenshots explainng the platform
 
 Every team member will be assgind for a task in this project using GitHub
