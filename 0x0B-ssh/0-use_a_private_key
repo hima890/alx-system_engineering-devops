@@ -1,1 +1,6 @@
 #!/usr/bin/env bash
+# Use ssh with single-character flags to connect to the server using the specified private key
+# Define the server address
+server_address="34.202.234.97"
+# onnect to the server user ubuntu
+ssh -i ~/.ssh/school ubuntu@$server_address
