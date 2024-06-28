@@ -6,8 +6,8 @@ class { 'python':
 }
 
 python::pip { 'flask':
-  ensure  => '2.1.0',
-  virtualenv => '/usr/local/bin/virtualenv',
+  ensure       => '2.1.0',
+  virtualenv   => '/usr/local/bin/virtualenv',
   pip_provider => 'pip3',
-  require => Class['python'],
+  require      => Class['python'],
 }
