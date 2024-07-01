@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Update package list and install Nginx
-apt update
-apt install -y nginx
+apt-get update
+apt-get install -y nginx
 
 # Ensure Nginx is running
 service nginx start
