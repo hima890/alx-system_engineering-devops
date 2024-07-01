@@ -1,1 +1,16 @@
 #!/usr/bin/env bash
+# Update package list and install Nginx
+apt update
+apt install -y nginx
+
+# Ensure Nginx is running
+service nginx start
+
+# Create an HTML file with "Hello World!" content
+echo "Hello World!" | tee /var/www/html/index.html
+
+# Restart Nginx to apply changes (without using systemctl)
+service nginx restart
+
+# Verify Nginx is running and serving the page
+curl -s http://localhost | grep "Hello World!" && echo "Nginx is serving 'Hello World!'" || echo "Nginx setup failed"
