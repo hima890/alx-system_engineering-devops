@@ -1,1 +1,17 @@
 #!/usr/bin/env bash
+# A Bash script that transfers a file from our client to a server
+# Check if exactly 4 arguments were provided
+if [ "$#" -le 3 ]; then
+  echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+  exit 1
+fi
+
+# Get the 4 arguments
+args=("$@")
+path_to_the_file="${args[0]}"
+IP="${args[1]}"
+username="${args[2]}"
+path_to_the_SSH="${args[3]}"
+
+# Excute the scp command
+scp -i "$path_to_the_SSH" -o StrictHostKeyChecking=no "$path_to_the_file" "$username"@"$IP":~/
