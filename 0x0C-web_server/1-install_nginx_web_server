@@ -4,10 +4,10 @@ sudo apt-get update
 sudo apt-get install -y nginx
 
 # Ensure Nginx is running
-service nginx start
+sudo service nginx start
 
 # Create an HTML file with "Hello World!" content
-echo "Hello World!" >> /var/www/html/index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
 # Restart Nginx to apply changes (without using systemctl)
-service nginx restart
+sudo service nginx restart
