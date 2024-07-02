@@ -29,5 +29,3 @@ EOF'
 
 # Restart Nginx to apply the changes
 sudo service nginx restart
-
-echo "Nginx configured with a 301 redirect from /redirect_me to https://www.youtube.com/watch?v=QH2-TGUlwu4"
