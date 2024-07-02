@@ -1,1 +1,33 @@
 #!/usr/bin/env bash
+# Update package list and install Nginx
+sudo apt update
+sudo apt install -y nginx
+
+# Create a backup of the default Nginx configuration file
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+# Configure Nginx to redirect /redirect_me
+sudo bash -c 'cat > /etc/nginx/sites-available/default <<EOF
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+}
+EOF'
+
+# Restart Nginx to apply the changes
+sudo service nginx restart
+
+echo "Nginx configured with a 301 redirect from /redirect_me to https://www.youtube.com/watch?v=QH2-TGUlwu4"
