@@ -12,8 +12,13 @@ sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.ba
 # Create an HTML file with "Hello World!" content
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
+echo "Hello World!" | sudo tee /etc/nginx/html/index.html
+
 # Configure Nginx to redirect /redirect_me
 sudo sed -i '/location \/ {/i     location /redirect_me {\n        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n        }' /etc/nginx/sites-available/default
 
 # Restart Nginx to apply the changes
 sudo service nginx restart
+
+# Echo a message to the user
+echo ""
