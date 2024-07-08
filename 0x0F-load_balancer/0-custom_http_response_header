@@ -28,6 +28,12 @@ if ! grep -q "add_header X-Served-By '$HOSTNAME';" /etc/nginx/sites-available/de
     sudo sed -i "/server_name _;/a \\    add_header X-Served-By '$HOSTNAME';" /etc/nginx/sites-available/default
 fi
 
+# Check if the error handling configuration is already present
+if ! grep -q "error_page 404 /404.html;" /etc/nginx/sites-available/default; then
+    # Insert the error handling configuration
+    sudo sed -i '/location \/ {/i \    error_page 404 /404.html;\n    location = /404.html {\n        root /var/www/html;\n        internal;\n    }' /etc/nginx/sites-available/default
+fi
+
 # Ensure Nginx starts on boot
 sudo systemctl enable nginx
 
