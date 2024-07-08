@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+# Configure Nginx so that its HTTP response contains a custom header (on web-01 and web-02)
 
-# Update and install Nginx
+# Update package lists
 sudo apt update
+
+# Install Nginx if not already installed
 sudo apt install -y nginx
 
 # Fetch the hostname of the server
@@ -10,17 +13,23 @@ HOSTNAME=$(hostname)
 # Create an HTML file with "Hello World!" content
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
-# Create an 404 HTML code file with "Ceci n'est pas une page" content
+# Create a 404 HTML file with "Ceci n'est pas une page" content
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 
-# Configure Nginx to redirect /redirect_me
-sudo sed -i '/location \/ {/i     location /redirect_me {\n        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n        }' /etc/nginx/sites-available/default
+# Check if the redirect configuration is already present
+if ! grep -q "location /redirect_me {" /etc/nginx/sites-available/default; then
+    # Configure Nginx to redirect /redirect_me
+    sudo sed -i '/location \/ {/i \    location /redirect_me {\n        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n    }' /etc/nginx/sites-available/default
+fi
 
-# Insert the add_header directive into the default server block
-sudo sed -i "/server_name _;/a \\    add_header X-Served-By '$HOSTNAME';" /etc/nginx/sites-available/default
+# Check if the add_header directive is already present
+if ! grep -q "add_header X-Served-By '$HOSTNAME';" /etc/nginx/sites-available/default; then
+    # Insert the add_header directive into the default server block
+    sudo sed -i "/server_name _;/a \\    add_header X-Served-By '$HOSTNAME';" /etc/nginx/sites-available/default
+fi
 
 # Ensure Nginx starts on boot
 sudo systemctl enable nginx
 
-# Restart Nginx
+# Restart Nginx to apply changes
 sudo systemctl restart nginx
