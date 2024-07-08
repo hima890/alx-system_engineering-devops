@@ -36,16 +36,16 @@ defaults
 
 frontend http_front
     bind *:80
+    mode http
     default_backend http_back
 
 backend http_back
     balance roundrobin
-    server web01 35.175.102.190 check
-    server web02 3.89.146.68 check
+    server web01 35.175.102.190:80 check
+    server web02 3.89.146.68:80 check
 
 listen stats
     bind *:8080
-    mode http
     stats enable
     stats uri /stats
     stats hide-version
