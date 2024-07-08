@@ -40,11 +40,12 @@ frontend http_front
 
 backend http_back
     balance roundrobin
-    server web01 513210-web-01:80 check
-    server web02 513210-web-02:80 check
+    server web01 35.175.102.190 check
+    server web02 3.89.146.68 check
 
 listen stats
     bind *:8080
+    mode http
     stats enable
     stats uri /stats
     stats hide-version
