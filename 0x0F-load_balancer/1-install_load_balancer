@@ -3,6 +3,7 @@
 
 # Update and install HAProxy
 sudo apt update
+sudo apt install -y nginx
 sudo apt install -y haproxy
 
 # Backup the default HAProxy configuration
@@ -10,6 +11,20 @@ sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
 
 # Get the hostname of the load balancer
 HOSTNAME=$(hostname)
+
+# Create an HTML file with "Hello World!" content
+echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Hello World!" | sudo tee /etc/nginx/html/index.html
+
+# Create an 404 HTML code file with "Ceci n'est pas une page" content
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
+
+# Configure Nginx to redirect /redirect_me
+sudo sed -i '/location \/ {/i error_page 404 /404.html;\n    location = /404.html {\n        root /var/www/html;\n        internal;\n    }\n' /etc/nginx/sites-available/default
+
+# Insert the add_header directive into the default server block
+sudo sed -i "/server_name _;/a \\    add_header X-Served-By '$HOSTNAME';" /etc/nginx/sites-available/default
 
 # Write a new HAProxy configuration
 sudo bash -c 'cat > /etc/haproxy/haproxy.cfg << EOF
@@ -55,8 +70,14 @@ listen stats
     stats auth admin:password
 EOF'
 
+# Restart Nginx to apply changes
+sudo service restart nginx
+
+# Ensure Nginx starts on boot
+sudo service enable nginx
+
 # Restart HAProxy to apply the new configuration
-sudo systemctl restart haproxy
+sudo service restart haproxy
 
 # Enable HAProxy to start on boot
-sudo systemctl enable haproxy
+sudo service enable haproxy

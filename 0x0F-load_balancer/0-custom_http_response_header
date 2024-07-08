@@ -27,7 +27,14 @@ sudo service restart nginx
 # Ensure Nginx starts on boot
 sudo service enable nginx
 
-# Allow HTTP traffic through the firewall
+# Enable UFW firewall
 sudo ufw enable
+
+# Allow SSH traffic
+sudo ufw allow ssh
+
+# Allow HTTP and HTTPS traffic for Nginx
 sudo ufw allow 'Nginx Full'
+
+# Reload UFW to apply the changes
 sudo ufw reload
