@@ -1,1 +1,44 @@
 #!/usr/bin/env bash
+
+# Update and install Nginx
+sudo apt update
+sudo apt install -y nginx
+
+# Fetch the hostname of the server
+HOSTNAME=$(hostname)
+
+# Create a new configuration file to include the custom header within the server block
+sudo bash -c 'cat > /etc/nginx/sites-available/default << EOF
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    add_header X-Served-By '"$HOSTNAME"';
+
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}
+EOF'
+
+# Remove any incorrect custom header configurations
+sudo rm -f /etc/nginx/conf.d/custom_headers.conf
+
+# Create an HTML file with "Hello World!" content
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Restart Nginx to apply changes
+sudo systemctl restart nginx
+
+# Ensure Nginx starts on boot
+sudo systemctl enable nginx
+
+# Allow HTTP traffic through the firewall
+sudo ufw enable
+sudo ufw allow 'Nginx Full'
+sudo ufw reload
