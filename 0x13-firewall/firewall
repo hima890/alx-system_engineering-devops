@@ -1,0 +1,35 @@
+#!/bin/bash
+# Set the firewall for the server
+# Function to check if UFW is installed
+check_ufw_installed() {
+    if dpkg -l | grep -qw ufw; then
+        echo "UFW is already installed."
+    else
+        echo "UFW is not installed. Installing UFW..."
+        sudo apt-get update
+        sudo apt-get install -y ufw
+    fi
+}
+
+# Function to configure UFW
+configure_ufw() {
+    echo "Configuring UFW..."
+    sudo ufw default deny incoming
+    sudo ufw default allow outgoing
+    sudo ufw allow 22/tcp
+    sudo ufw allow 80/tcp
+    sudo ufw allow 443/tcp
+    sudo ufw enable
+    sudo ufw reload
+    echo "UFW configuration complete."
+}
+
+# Check if UFW is installed and install it if necessary
+check_ufw_installed
+
+# Configure UFW
+configure_ufw
+
+# Check UFW status
+sudo ufw status
+
