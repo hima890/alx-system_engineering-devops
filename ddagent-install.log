@@ -1,0 +1,118 @@
+[34m
+* Datadog Agent 7 install script v1.33.0
+[0m
+/usr/bin/systemctl
+[34m
+* Installing apt-transport-https, curl and gnupg
+[0m
+Ign:1 https://repo.protonvpn.com/debian stable InRelease
+Hit:2 http://ppa.launchpad.net/papirus/papirus/ubuntu focal InRelease
+Ign:3 https://repo.windscribe.com/ubuntu bionic InRelease
+Hit:4 http://sd.archive.ubuntu.com/ubuntu focal InRelease
+Err:6 https://repo.protonvpn.com/debian stable Release
+  Could not handshake: Error in the pull function. [IP: 104.26.5.35 443]
+Err:7 https://repo.windscribe.com/ubuntu bionic Release
+  Could not handshake: Error in the pull function. [IP: 104.20.88.86 443]
+Get:8 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+Get:9 http://sd.archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+Ign:10 https://dl.google.com/linux/chrome/deb stable InRelease
+Err:11 https://dl.google.com/linux/chrome/deb stable Release
+  404  Not Found [IP: 173.194.79.136 443]
+Get:5 https://packages.microsoft.com/repos/code stable InRelease [3,590 B]
+Hit:13 http://sd.archive.ubuntu.com/ubuntu focal-backports InRelease
+Get:14 http://security.ubuntu.com/ubuntu focal-security/main i386 Packages [795 kB]
+Get:15 http://sd.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [3,496 kB]
+Get:16 https://packages.microsoft.com/repos/code stable/main arm64 Packages [17.7 kB]
+Get:17 https://packages.microsoft.com/repos/code stable/main armhf Packages [17.7 kB]
+Get:18 https://packages.microsoft.com/repos/code stable/main amd64 Packages [17.5 kB]
+Get:19 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [3,125 kB]
+Hit:12 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease
+Get:20 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [464 kB]
+Get:21 http://sd.archive.ubuntu.com/ubuntu focal-updates/main i386 Packages [1,016 kB]
+Get:22 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [3,034 kB]
+Get:23 http://security.ubuntu.com/ubuntu focal-security/restricted Translation-en [425 kB]
+Get:24 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [999 kB]
+Get:25 http://security.ubuntu.com/ubuntu focal-security/universe i386 Packages [674 kB]
+Get:26 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [212 kB]
+Get:27 http://security.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [21.1 kB]
+Get:28 http://sd.archive.ubuntu.com/ubuntu focal-updates/main Translation-en [543 kB]
+Get:29 http://sd.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [3,152 kB]
+Get:30 http://sd.archive.ubuntu.com/ubuntu focal-updates/restricted Translation-en [442 kB]
+Get:31 http://sd.archive.ubuntu.com/ubuntu focal-updates/universe i386 Packages [801 kB]
+Get:32 http://sd.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1,219 kB]
+Get:33 http://sd.archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [294 kB]
+Get:34 http://sd.archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [27.8 kB]
+Reading package lists...
+E: The repository 'https://repo.protonvpn.com/debian stable Release' no longer has a Release file.
+E: The repository 'https://repo.windscribe.com/ubuntu bionic Release' does not have a Release file.
+E: The repository 'https://dl.google.com/linux/chrome/deb stable Release' does not have a Release file.
+[31m'apt-get update' failed, the script will not install the latest version of apt-transport-https.[0m
+Reading package lists...
+Building dependency tree...
+Reading state information...
+gnupg is already the newest version (2.2.19-3ubuntu2.2).
+gnupg set to manually installed.
+The following NEW packages will be installed:
+  apt-transport-https
+The following packages will be upgraded:
+  curl libcurl4
+2 upgraded, 1 newly installed, 0 to remove and 261 not upgraded.
+Need to get 398 kB of archives.
+After this operation, 162 kB of additional disk space will be used.
+Get:1 http://sd.archive.ubuntu.com/ubuntu focal-updates/universe amd64 apt-transport-https all 2.0.10 [1,704 B]
+Get:2 http://sd.archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.23 [161 kB]
+Get:3 http://sd.archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl4 amd64 7.68.0-1ubuntu2.23 [235 kB]
+Fetched 398 kB in 21s (18.6 kB/s)
+Selecting previously unselected package apt-transport-https.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 178090 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_2.0.10_all.deb ...
+Unpacking apt-transport-https (2.0.10) ...
+Preparing to unpack .../curl_7.68.0-1ubuntu2.23_amd64.deb ...
+Unpacking curl (7.68.0-1ubuntu2.23) over (7.68.0-1ubuntu2.22) ...
+Preparing to unpack .../libcurl4_7.68.0-1ubuntu2.23_amd64.deb ...
+Unpacking libcurl4:amd64 (7.68.0-1ubuntu2.23) over (7.68.0-1ubuntu2.22) ...
+Setting up apt-transport-https (2.0.10) ...
+Setting up libcurl4:amd64 (7.68.0-1ubuntu2.23) ...
+Setting up curl (7.68.0-1ubuntu2.23) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.12) ...
+[34m
+* Installing APT package sources for Datadog
+[0m
+gpg: directory '/root/.gnupg' created
+gpg: /root/.gnupg/trustdb.gpg: trustdb created
+gpg: key E6266D4AC0962C7D: public key "Datadog, Inc. APT key (2023-04-20) (APT key) <package+aptkey@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg: key 0D826EB906462314: public key "Datadog, Inc. APT key (2024-05-15) (APT key) <package+aptkey@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg: key E6266D4AC0962C7D: "Datadog, Inc. APT key (2023-04-20) (APT key) <package+aptkey@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+gpg: key 32637D44F14F620E: public key "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg: key D3A80E30382E94DE: public key "Datadog, Inc <package@datadoghq.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+Ign:1 https://apt.datadoghq.com stable InRelease
+Get:2 https://apt.datadoghq.com stable Release [26.0 kB]
+Get:3 https://apt.datadoghq.com stable Release.gpg [801 B]
+Get:4 https://apt.datadoghq.com stable/7 all Packages [1,073 B]
+Get:5 https://apt.datadoghq.com stable/7 i386 Packages [1,073 B]
+Get:6 https://apt.datadoghq.com stable/7 amd64 Packages [78.1 kB]
+Fetched 107 kB in 4s (28.5 kB/s)
+Reading package lists...
+  [33mInstalling package(s): datadog-agent datadog-signing-keys
+[0m
+tee: /tmp/ddog_install_error_msg: Permission denied
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  datadog-agent datadog-signing-keys
+0 upgraded, 2 newly installed, 0 to remove and 261 not upgraded.
+Need to get 273 MB of archives.
+After this operation, 1,265 MB of additional disk space will be used.
+Get:1 https://apt.datadoghq.com stable/7 amd64 datadog-agent amd64 1:7.55.3-1 [273 MB]
