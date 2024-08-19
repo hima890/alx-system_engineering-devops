@@ -4,7 +4,7 @@
 - **Impact:** Imagine 80% of our users eagerly trying to log in, browse products, or make purchases, only to be met with spinning wheels and timeouts. It was like watching a pot boil—if the pot was our servers and the boiling was... well, nothing happening at all. E-commerce transactions? Frozen. User experience? Throttled. Our engineering team’s anxiety? Sky-high.
 - **Root Cause:** The root cause was a misconfigured HAProxy load balancer that became as bloated as a post-holiday meal. Thanks to a memory leak, it eventually crashed under the weight of its own indulgence.
 
-![HAProxy Trying to Keep It Together](https://example.com/haproxy-meme.jpg)
+![HAProxy Trying to Keep It Together](https://i.imgflip.com/4wulkx.jpg)
 *Caption: HAProxy after the misconfiguration: “I can handle this… nope!”*
 
 **Timeline:**
